@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route, HashRouter as Router } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'; // can useHashRouter as well
+
 
 import CounterComponent from './Components/CounterComponent';
 import NewRoute from './Components/NewRoute';
