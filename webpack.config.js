@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
     entry: './index.js',
     output: {
-        filename: 'bundle.[hash].js',
+        filename: 'bundle.[fullhash].js',
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
@@ -25,7 +25,13 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: require.resolve('babel-loader')
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: ['@babel/plugin-proposal-class-properties'],
+                    },
+                },
             },
             {
                 test: /\.css$/,
@@ -33,7 +39,7 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(less)$/,
