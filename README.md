@@ -1,21 +1,21 @@
 ***INSTALL PACKAGES***
 
-yarn install
+npm install
 
 
 ***START SERVER*** 
 
- yarn start
+ npm start
 
 
 ***BUILD BUNDLE*** 
 
-yarn build
+npm run build
 
 
 ***START TEST*** 
 
-yarn test
+npm run test
 
 ***NOTE***
 
